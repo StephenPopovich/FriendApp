@@ -7,7 +7,7 @@
       friendsController.show(req, res);
     });
 
-    app.post('/addFriend', function(req, res){
-    	friends.post(req, res);
+    app.post('/add_friend', function(req, res){
+    	friendsController.create(req, res);
     });
   };

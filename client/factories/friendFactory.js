@@ -5,7 +5,7 @@ Myapp.factory('friendsFactory', function($http) {
       console.log(callback);
       $http.get('/friends').success(function(result){
           console.log(result);
-          
+          callback(result);
       })
     }
     factory.add_friend = function(info, callback){

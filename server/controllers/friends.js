@@ -8,19 +8,26 @@ module.exports = (function() {
       	if(err) {
       		console.log(err);
       	} else {
+          console.log("this is working!");
       		res.json(results);
       	}
-      });
+      })
     },
 
-    post: function(req, res) {
-      Friend.create(req.body, function(hello, results){
-        if(hello) {
-          console.log(hello);
-        } else {
-          res.json(results);
+    create: function(req, res){
+      var friend = new friend({name: req.body.name, age: req.body.age})
+      friend.save(function(err, result){
+        if(err){
+            console.log('error');
+        } else
+        {
+          console.log('this is working');
+          // friend.find({}, function(err, result){
+          //   console.log
+          // })
+          res.redirect('/friends');
         }
-      });
+      })
     }
-  };
+  }
 })();
