@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-var Friend = mongoose.model('Friend');
+var friend = mongoose.model('friend');
 
 module.exports = (function() {
   return {
     show: function(req, res) {
-      Friend.find({}, function(err, results){
+      friend.find({}, function(err, results){
       	if(err) {
       		console.log(err);
       	} else {

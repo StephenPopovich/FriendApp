@@ -6,15 +6,13 @@ var bodyParser = require('body-parser');
 // instantiate the app
 var app = express();
 
+// set up a static file server that points to the "client" directory
+app.use(express.static(path.join(__dirname, './client')));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./config/mongoose.js');
 require('./config/routes.js')(app);
 
-
-// set up a static file server that points to the "client" directory
-app.use(express.static(path.join(__dirname, './client')));
 app.listen(8000, function() {
   console.log('cool stuff on: 8000');
 });
