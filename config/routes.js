@@ -5,9 +5,12 @@
   module.exports = function(app) {
     app.get('/friends', function(req, res) {
       friendsController.show(req, res);
-    });
+    })
 
     app.post('/add_friend', function(req, res){
     	friendsController.create(req, res);
-    });
-  };
+    })
+    app.get('/destroy_friend/:id', function(req, res){
+      console.log(req.params);
+    })
+  }

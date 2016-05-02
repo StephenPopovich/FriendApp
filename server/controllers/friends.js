@@ -15,8 +15,8 @@ module.exports = (function() {
     },
 
     create: function(req, res){
-      var friend = new friend({name: req.body.name, age: req.body.age})
-      friend.save(function(err, result){
+      var new_friend = new friend({name: req.body.name, age: req.body.age})
+      new_friend.save(function(err, result){
         if(err){
             console.log('error');
         } else
@@ -25,7 +25,7 @@ module.exports = (function() {
           // friend.find({}, function(err, result){
           //   console.log
           // })
-          res.redirect('/friends');
+          res.json(result);
         }
       })
     }

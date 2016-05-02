@@ -8,6 +8,6 @@
 
 <h5>Find Friend</h5><input type="text" ng-model ="filter_name">
 
-<ul>
-  <li ng-repeat = "friend in friends | filter:filter_name | orderBy: 'name'">{{ friend.name }} - age {{ friend.age | number:0}}</li>
-</ul>
+  <div ng-repeat = "friend in friends | filter:filter_name | orderBy: 'name'">
+    <div>{{ friend.name }} - age {{ friend.age | number:0}}</div><input type="submit" value="Delete" ng-click='removefriend(friend._id)'>
+  </div>
