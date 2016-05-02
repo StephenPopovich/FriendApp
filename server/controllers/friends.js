@@ -36,6 +36,15 @@ module.exports = (function() {
           res.json(result);
         }
       })
+    },
+    update: function(req, res){
+      friend.update({_id: req.body._id}, {name: req.body.name, age: req.body.age}, function(err, results){
+        if(err){
+          console.log('error');
+        }else{
+          res.json(results);
+        }
+      })
     }
   }
 })();
