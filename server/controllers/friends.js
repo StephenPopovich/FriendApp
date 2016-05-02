@@ -19,12 +19,20 @@ module.exports = (function() {
       new_friend.save(function(err, result){
         if(err){
             console.log('error');
-        } else
-        {
+        } else {
           console.log('this is working');
           // friend.find({}, function(err, result){
           //   console.log
           // })
+          res.json(result);
+        }
+      })
+    },
+    destroy: function(req, res){
+      friend.remove({_id: req.params._id}, function(err, result){
+        if(err){
+          console.log('error');
+        }else{
           res.json(result);
         }
       })

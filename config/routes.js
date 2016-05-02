@@ -10,7 +10,7 @@
     app.post('/add_friend', function(req, res){
     	friendsController.create(req, res);
     })
-    app.get('/destroy_friend/:id', function(req, res){
-      console.log(req.params);
+    app.get('/destroy_friend/:_id', function(req, res){
+      friendsController.destroy(req, res);
     })
   }

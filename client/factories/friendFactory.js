@@ -17,7 +17,9 @@ Myapp.factory('friendsFactory', function($http) {
     }
     factory.destroy_friend = function(id, callback){
       console.log(id);
-      $http.get('/destroy_friend/' + id);
+      $http.get('/destroy_friend/' + id).success(function(result){
+        callback();
+      });
     }
 
     return factory;
