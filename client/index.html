@@ -1,6 +1,6 @@
 <html ng-app='Myapp'>
 <head>
-  <title>Full Mean Demo="support tag from-rainbow"></title>
+  <title>Friends List</title>
   <!-- require angular -->
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
@@ -14,9 +14,11 @@
 </head>
 <!-- everything in the body is going to use the friends controller (this gives us access to the friends controller $scope) -->
 <body ng-controller = "friendController">
-  <h1>This is working</h1>
+
   <h1>Friends</h1>
+
   <div ng-view="">
   </div>
+
 </body>
 </html>
